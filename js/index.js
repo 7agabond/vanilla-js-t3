@@ -12,6 +12,13 @@ const App = {
     moves: [],
   },
 
+  getGameStatus(moves) {
+    return {
+      status: "in-progress", // in-progress | complete
+      winner: 1, // 1 | 2 | null
+    };
+  },
+
   init() {
     App.registerEventListeners();
   },
