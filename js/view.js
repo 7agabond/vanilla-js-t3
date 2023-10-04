@@ -12,4 +12,8 @@ export default class View {
     this.$.modalBtn = document.querySelector('[data-id="modal-btn"]');
     this.$.turn = document.querySelector('[data-id="turn"]');
   }
+
+  bindGameResetEvent(handler) {
+    
+  }
 }
