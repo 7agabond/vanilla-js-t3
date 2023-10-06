@@ -14,6 +14,6 @@ export default class View {
   }
 
   bindGameResetEvent(handler) {
-    
+    this.$.resetBtn.addEventListener("click", handler);
   }
 }
