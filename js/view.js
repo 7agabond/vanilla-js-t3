@@ -38,5 +38,6 @@ export default class View {
    */
   toggleMenu() {
     this.$.menuItems.classList.toggle("hidden");
+    this.$.menuBtn.classList.toggle('border')
   }
 }
