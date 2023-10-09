@@ -17,3 +17,4 @@ export default class View {
     this.$.resetBtn.addEventListener("click", handler);
   }
 }
+ 
