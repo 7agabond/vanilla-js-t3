@@ -14,8 +14,8 @@ export default class View {
     this.$.turn = document.querySelector('[data-id="turn"]');
 
     //UI-only event listeners
-    this.$.menuBtn.addEventListener('click', event => {
-      this.$.menuItems.classList.toggle('hidden')
+    this.$.menuBtn.addEventListener("click", (event) => {
+      this.toggleMenu()
     });
   }
 
@@ -31,5 +31,12 @@ export default class View {
     this.$.squares.forEach((square) => {
       square.addEventListener("click", handler);
     });
+  }
+
+  /**
+   * DOM helper methods
+   */
+  toggleMenu() {
+    this.$.menuItems.classList.toggle("hidden");
   }
 }
