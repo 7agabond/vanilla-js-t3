@@ -2,7 +2,7 @@ export default class View {
   $ = {};
 
   constructor() {
-    this.$.menu = document.querySelector('[data-id="menu"');
+    this.$.menu = this.qs('[data-id="menu"');
     this.$.menuBtn = document.querySelector('[data-id="menu-btn"');
     this.$.menuItems = document.querySelector('[data-id="menu-items"');
     this.$.resetBtn = document.querySelector('[data-id="reset-btn"');
@@ -44,5 +44,13 @@ export default class View {
 
     icon.classList.toggle("fa-chevron-down")
     icon.classList.toggle("fa-chevron-up")
+
+  }
+  qs(selector) {
+    const el = document.querySelector(selector)
+
+    if(!el) throw new Error('Could not find elements')
+
+    return el
   }
 }
