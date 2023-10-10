@@ -19,6 +19,10 @@ export default class View {
     });
   }
 
+  /**
+   * Register all the event listeners
+   */
+
   bindGameResetEvent(handler) {
     this.$.resetBtn.addEventListener("click", handler);
   }
@@ -36,6 +40,7 @@ export default class View {
   /**
    * DOM helper methods
    */
+
   toggleMenu() {
     this.$.menuItems.classList.toggle("hidden");
     this.$.menuBtn.classList.toggle('border')
