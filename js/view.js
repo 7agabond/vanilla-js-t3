@@ -1,5 +1,6 @@
 export default class View {
   $ = {};
+  $$ = {};
 
   constructor() {
     this.$.menu = this.#qs('[data-id="menu"]');
@@ -7,11 +8,12 @@ export default class View {
     this.$.menuItems = this.#qs('[data-id="menu-items"]');
     this.$.resetBtn = this.#qs('[data-id="reset-btn"]');
     this.$.newRoundBtn = this.#qs('[data-id="new-round-btn"]');
-    this.$.squares = this.#qsAll('[data-id="square"]');
     this.$.modal = this.#qs('[data-id="modal"]');
     this.$.modalText = this.#qs('[data-id="modal-text"]');
     this.$.modalBtn = this.#qs('[data-id="modal-btn"]');
     this.$.turn = this.#qs('[data-id="turn"]');
+
+    this.$$.squares = this.#qsAll('[data-id="square"]');
 
     //UI-only event listeners
     this.$.menuBtn.addEventListener("click", (event) => {
@@ -55,17 +57,17 @@ export default class View {
     const el = parent
       ? parent.querySelector(selector)
       : document.querySelector(selector);
-  
+
     if (!el) throw new Error("Could not find elements");
-  
+
     return el;
   }
 
   #qsAll(selector) {
     const elList = document.querySelectorAll(selector);
-  
+
     if (!elList) throw new Error("Could not find elements");
-  
+
     return elList;
   }
 }
