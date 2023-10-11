@@ -7,7 +7,7 @@ export default class View {
     this.$.menuItems = this.#qs('[data-id="menu-items"]');
     this.$.resetBtn = this.#qs('[data-id="reset-btn"]');
     this.$.newRoundBtn = this.#qs('[data-id="new-round-btn"]');
-    this.$.squares = document.querySelectorAll('[data-id="square"]');
+    this.$.squares = this.#qsAll('[data-id="square"]');
     this.$.modal = this.#qs('[data-id="modal"]');
     this.$.modalText = this.#qs('[data-id="modal-text"]');
     this.$.modalBtn = this.#qs('[data-id="modal-btn"]');
@@ -15,7 +15,7 @@ export default class View {
 
     //UI-only event listeners
     this.$.menuBtn.addEventListener("click", (event) => {
-      this.#toggleMenu()
+      this.#toggleMenu();
     });
   }
 
@@ -43,20 +43,29 @@ export default class View {
 
   #toggleMenu() {
     this.$.menuItems.classList.toggle("hidden");
-    this.$.menuBtn.classList.toggle('border')
+    this.$.menuBtn.classList.toggle("border");
 
-    const icon = this.$.menuBtn.querySelector('i')
+    const icon = this.$.menuBtn.querySelector("i");
 
-    icon.classList.toggle("fa-chevron-down")
-    icon.classList.toggle("fa-chevron-up")
-
+    icon.classList.toggle("fa-chevron-down");
+    icon.classList.toggle("fa-chevron-up");
   }
+
+  #qs(selector, parent) {
+    const el = parent
+      ? parent.querySelector(selector)
+      : document.querySelector(selector);
   
-  #qs(selector) {
-    const el = document.querySelector(selector)
+    if (!el) throw new Error("Could not find elements");
+  
+    return el;
+  }
 
-    if(!el) throw new Error('Could not find elements')
-
-    return el
+  #qsAll(selector) {
+    const elList = document.querySelectorAll(selector);
+  
+    if (!elList) throw new Error("Could not find elements");
+  
+    return elList;
   }
 }
