@@ -41,7 +41,7 @@ export default class View {
    * DOM helper methods
    */
 
-  toggleMenu() {
+  #toggleMenu() {
     this.$.menuItems.classList.toggle("hidden");
     this.$.menuBtn.classList.toggle('border')
 
