@@ -51,7 +51,8 @@ export default class View {
     icon.classList.toggle("fa-chevron-up")
 
   }
-  qs(selector) {
+  
+  #qs(selector) {
     const el = document.querySelector(selector)
 
     if(!el) throw new Error('Could not find elements')
