@@ -7,6 +7,10 @@ export default class Store {
 
   constructor() {}
 
+  get game() {
+    
+  }
+
   #getState() {
     return this.#state;
   }

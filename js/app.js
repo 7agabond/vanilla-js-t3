@@ -1,3 +1,4 @@
+import Store from "./store.js";
 import View from "./view.js";
 
 const App = {
@@ -149,6 +150,7 @@ const App = {
 
 function init() {
   const view = new View();
+  const store = new Store();
 
   view.bindGameResetEvent((event) => {
     console.log("Reset event");
