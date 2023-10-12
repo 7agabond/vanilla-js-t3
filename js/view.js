@@ -53,6 +53,12 @@ export default class View {
     icon.classList.toggle("fa-chevron-up");
   }
 
+  handlePlayerMove(squareEl, player) {
+    const icon = document.createElement("i");
+    icon.classList.add("fa-solid", player === 1 ? "fa-x" : "fa-o");
+    squareEl.replaceChildren(icon)
+  }
+
   // player = 1 | 2
   setTurnIndicator(player) {
     const icon = document.createElement("i");
