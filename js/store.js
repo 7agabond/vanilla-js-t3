@@ -1,7 +1,28 @@
 export default class Store {
-    constructor() {}
+  #state = { moves: [] };
 
-    #getState() {}
+  constructor() {}
 
-    #saveState() {}
+  #getState() {
+    return this.#state;
+  }
+
+  #saveState(stateOrFn) {
+    const prevState = this.#getState();
+
+    let newState;
+
+    switch (typeof stateOrFn) {
+      case "function":
+        newState = stateOrFn(prevState);
+        break;
+      case "object":
+        newState = stateOrFn;
+        break;
+      default:
+        throw new Error("Invalid argument passed to saveState");
+    }
+
+    this.#state = newState;
+  }
 }
