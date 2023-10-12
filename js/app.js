@@ -162,7 +162,7 @@ function init() {
 
   view.bindPlayerMoveEvent((event) => {
     view.setTurnIndicator(2);
-    view.handlePlayerMove(2);
+    view.handlePlayerMove(event.target, 1);
   });
 }
 
