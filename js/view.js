@@ -55,7 +55,7 @@ export default class View {
 
   handlePlayerMove(squareEl, player) {
     const icon = document.createElement("i");
-    icon.classList.add("fa-solid", player === 1 ? "fa-x" : "fa-o");
+    icon.classList.add("fa-solid", player === 1 ? "fa-x yellow" : "fa-o turquoise");
     squareEl.replaceChildren(icon)
   }
 
