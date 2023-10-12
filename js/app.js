@@ -161,8 +161,7 @@ function init() {
   });
 
   view.bindPlayerMoveEvent((event) => {
-    console.log("Player move event");
-    console.log(event);
+    view.setTurnIndicator(2);
   });
 }
 
