@@ -1,15 +1,13 @@
 const initialValue = {
-    moves: []
-}
+  moves: [],
+};
 
 export default class Store {
-  #state = initialValue
+  #state = initialValue;
 
   constructor() {}
 
-  get game() {
-    
-  }
+  get game() {}
 
   #getState() {
     return this.#state;
