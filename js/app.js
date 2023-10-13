@@ -148,11 +148,26 @@ const App = {
   },
 };
 
+const players = [
+  {
+    id: 1,
+    name: "Player 1",
+    iconClass: "fa-x",
+    colorClass: "turquoise",
+  },
+  {
+    id: 2,
+    name: "Player 2",
+    iconClass: "fa-o",
+    colorClass: "yellow",
+  },
+];
+
 function init() {
   const view = new View();
   const store = new Store();
 
-  console.log(store.game)
+  console.log(store.game);
 
   view.bindGameResetEvent((event) => {
     console.log("Reset event");
