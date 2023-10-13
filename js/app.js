@@ -152,6 +152,8 @@ function init() {
   const view = new View();
   const store = new Store();
 
+  console.log(store.game)
+
   view.bindGameResetEvent((event) => {
     console.log("Reset event");
     console.log(event);
