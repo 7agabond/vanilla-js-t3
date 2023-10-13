@@ -155,12 +155,6 @@ const players = [
     iconClass: "fa-x",
     colorClass: "turquoise",
   },
-  {
-    id: 2,
-    name: "Player 2",
-    iconClass: "fa-o",
-    colorClass: "yellow",
-  },
 ];
 
 function init() {
