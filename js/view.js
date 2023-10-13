@@ -70,7 +70,7 @@ export default class View {
 
     icon.classList.add("fa-solid", player.colorClass, player.iconClass);
 
-    label.classList.add(player, colorClass);
+    label.classList.add(player.colorClass);
     label.innerText = `${player.name}, you're up!`;
 
     this.$.turn.replaceChildren(icon, label);
