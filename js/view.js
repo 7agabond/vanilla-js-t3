@@ -60,7 +60,7 @@ export default class View {
       player === 1 ? "fa-x" : "fa-o",
       player === 1 ? "yellow" : "turquoise"
     );
-    squareEl.replaceChildren(icon)
+    squareEl.replaceChildren(icon);
   }
 
   // player = 1 | 2
@@ -68,14 +68,10 @@ export default class View {
     const icon = document.createElement("i");
     const label = document.createElement("p");
 
-    icon.classList.add(player.colorClass)
-    icon.classList.add("fa-solid", player.iconClass);
-    
-    label.classList.add(player, colorClass)
+    icon.classList.add("fa-solid", player.colorClass, player.iconClass);
 
-
-    label.innerText =
-      player === 1 ? "Player 1, you're up!" : "Player 2, you're up!";
+    label.classList.add(player, colorClass);
+    label.innerText = `${player.name}, you're up!`;
 
     this.$.turn.replaceChildren(icon, label);
   }

@@ -8,7 +8,7 @@ export default class Store {
   constructor() {}
 
   get game() {
-    return 'dummy value'
+    return "dummy value";
   }
 
   #getState() {
@@ -34,4 +34,3 @@ export default class Store {
     this.#state = newState;
   }
 }
-  
