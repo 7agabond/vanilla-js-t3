@@ -180,7 +180,7 @@ function init() {
   });
 
   view.bindPlayerMoveEvent((event) => {
-    view.setTurnIndicator(2);
+    view.setTurnIndicator(players[1]);
     view.handlePlayerMove(event.target, 1);
   });
 }
