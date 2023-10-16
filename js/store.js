@@ -8,7 +8,7 @@ export default class Store {
   constructor() {}
 
   get game() {
-    return "dummy value";
+    const state = this.#getState()
   }
 
   #getState() {
