@@ -1,8 +1,6 @@
 import Store from "./store.js";
 import View from "./view.js";
 
-// Under progress
-
 const App = {
   // All of our selected HTML elements
   $: {
