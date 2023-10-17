@@ -182,6 +182,14 @@ function init() {
   view.bindPlayerMoveEvent((event) => {
     const clickedSquare = event.target;
 
+    const existingMove = store.game.moves.find(
+      (move) => move.squareId === +clickedSquare.id
+    );
+
+    if (existingMove) {
+      return;
+    }
+
     // Place an icon of the current player in a square
     view.handlePlayerMove(clickedSquare, store.game.currentPlayer);
 
