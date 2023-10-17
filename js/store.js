@@ -15,6 +15,7 @@ export default class Store {
     const currentPlayer = this.players[state.moves.length % 2];
 
     return {
+      moves: state.moves,
       currentPlayer,
     };
   }
