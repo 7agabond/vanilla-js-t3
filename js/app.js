@@ -165,7 +165,7 @@ const players = [
 
 function init() {
   const view = new View();
-  const store = new Store();
+  const store = new Store(players);
 
   console.log(store.game);
 
