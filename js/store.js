@@ -20,14 +20,16 @@ export default class Store {
   }
 
   playerMove(squareId) {
-    const state = this.#getState()
+    const state = this.#getState();
 
-    const stateClone = structuredClone(state)
+    const stateClone = structuredClone(state);
 
     stateClone.moves.push({
       squareId,
-      player: this.game.currentPlayer
-    })
+      player: this.game.currentPlayer,
+    });
+
+    this.#saveState(stateClone);
   }
 
   #getState() {
