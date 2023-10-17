@@ -6,13 +6,28 @@ export default class Store {
   #state = initialValue;
 
   constructor(players) {
-    this.players = players
+    this.players = players;
   }
 
   get game() {
     const state = this.#getState();
 
-    const currentPlayer = this.players[state.moves.length % 2]
+    const currentPlayer = this.players[state.moves.length % 2];
+
+    return {
+      currentPlayer,
+    };
+  }
+
+  playerMove(squareId) {
+    const state = this.#getState()
+
+    const stateClone = structuredClone(state)
+
+    stateClone.moves.push({
+      squareId,
+      player: this.game.currentPlayer
+    })
   }
 
   #getState() {
