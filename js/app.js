@@ -180,13 +180,16 @@ function init() {
   });
 
   view.bindPlayerMoveEvent((event) => {
-    const clickedSquare = event.target
+    const clickedSquare = event.target;
 
+    // Place an icon of the current player in a square
     view.handlePlayerMove(clickedSquare, store.game.currentPlayer);
-    
-    
 
-    view.setTurnIndicator(players[1]);
+    // Advance to the next state by pushing a move to the moves array
+    store.playerMove(+clickedSquare.id);
+
+    // Set the next player's turn indicator
+    view.setTurnIndicator(store.game.currentPlayer);
   });
 }
 
