@@ -50,7 +50,13 @@ export default class View {
   }
 
   closeModal() {
-    this.$.modal.classList.add('hidden')
+    this.$.modal.classList.add("hidden");
+  }
+
+  clearMoves() {
+    this.$$.squares.forEach((square) => {
+      square.replaceChildren();
+    });
   }
 
   #toggleMenu() {

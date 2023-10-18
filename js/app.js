@@ -171,6 +171,12 @@ function init() {
 
   view.bindGameResetEvent((event) => {
     view.closeModal();
+
+    store.reset();
+
+    view.clearMoves();
+
+    view.setTurnIndicator(store.game.currentPlayer);
   });
 
   view.bindNewRoundEvent((event) => {
