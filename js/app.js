@@ -170,7 +170,7 @@ function init() {
   console.log(store.game);
 
   view.bindGameResetEvent((event) => {
-    view.closeModal();
+    view.closeAll();
 
     store.reset();
 

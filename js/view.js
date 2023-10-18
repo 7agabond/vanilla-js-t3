@@ -49,14 +49,30 @@ export default class View {
     this.$.modalText.innerText = message;
   }
 
-  closeModal() {
-    this.$.modal.classList.add("hidden");
+  
+  closeAll() {
+    this.#closeModal();
+    this.#closeMenu();
   }
-
+  
   clearMoves() {
     this.$$.squares.forEach((square) => {
       square.replaceChildren();
     });
+  }
+  
+  #closeModal() {
+    this.$.modal.classList.add("hidden");
+  }
+
+  #closeMenu() {
+    this.$.menuItems.classList.add("hidden");
+    this.$.menuBtn.classList.remove("border");
+
+    const icon = this.$.menuBtn.querySelector("i");
+
+    icon.classList.add("fa-chevron-down");
+    icon.classList.remove("fa-chevron-up");
   }
 
   #toggleMenu() {
