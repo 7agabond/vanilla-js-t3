@@ -68,6 +68,16 @@ export default class View {
     });
   }
 
+  initializeMoves(moves) {
+    this.$$.squares.forEach((square) => {
+      const existingMove = moves.find((move) => move.squareId === +square.id);
+
+      if (existingMove) {
+        this.handlePlayerMove(square, existingMove.player);
+      }
+    });
+  }
+
   #closeModal() {
     this.$.modal.classList.add("hidden");
   }
@@ -98,7 +108,6 @@ export default class View {
     squareEl.replaceChildren(icon);
   }
 
-  // player = 1 | 2
   setTurnIndicator(player) {
     const icon = document.createElement("i");
     const label = document.createElement("p");
