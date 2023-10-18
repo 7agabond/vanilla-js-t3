@@ -32,6 +32,11 @@ function init() {
     view.initializeMoves(store.game.moves);
   }
 
+  window.addEventListener('storage', () => {
+    console.log('State changed from another tab')
+    initView()
+  })
+
   initView();
 
   view.bindGameResetEvent((event) => {
